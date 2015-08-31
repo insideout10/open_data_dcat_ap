@@ -1,0 +1,37 @@
+<?php
+
+include_once 'open_data_dcat_ap.features.inc';
+
+/**
+ * Implements hook_open_data_schema_map_results_alter().
+ */
+function open_data_dcat_ap_open_data_schema_map_results_alter(&$result, $api_machine_name, $schema) {
+
+  dd("datigov_core :: [ results count :: " . sizeof($result) . " ][ api_machine_name :: $api_machine_name ][ schema :: $schema ]");
+
+//  foreach ($result as $item) {
+//    dd(var_export($item, TRUE));
+//  }
+
+
+//  $result['description'] = 'Lorem Ipsum';
+
+}
+
+
+/**
+ * Implements hook_open_data_schema().
+ */
+function open_data_dcat_ap_open_data_schema() {
+
+  $module_path = DRUPAL_ROOT . '/' . drupal_get_path('module', 'open_data_dcat_ap');
+  return array(
+    array(
+      'short_name'  => 'dcat_ap_1_01',
+      'title'       => 'DCAT-AP v1.01',
+      'schema_file' => $module_path . '/data/v1.01/dataset.json',
+      'description' => t('...'),
+    ),
+  );
+
+}

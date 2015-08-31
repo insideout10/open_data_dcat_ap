@@ -1,0 +1,10 @@
+name = Open Data DCAT-AP
+description = DCAT-AP schema.
+package = DCAT-AP
+core = 7.x
+version = 7.x-1.x
+dependencies[] = open_data_schema_map
+files[] = open_data_dcat_ap.features.inc
+features[features_api][] = api:2
+features[open_data_schema_apis][] = dcat_ap_json_1_01
+mtime = 1418761948
