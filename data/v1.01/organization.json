@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "https://project-open-data.cio.gov/v1.1/schema/organization.json#",
-  "title": "Project Open Data Organization",
+  "id": "https://raw.githubusercontent.com/insideout10/open_data_dcat_ap/develop/data/v1.01/organization.json#",
+  "title": "DCAT-AP v1.01 Organization",
   "description": "A Dataset Publisher Organization as a foaf:Agent object",
   "type": "object",
   "required": [
