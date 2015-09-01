@@ -19,22 +19,22 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
         'value' => 'dcat:Dataset',
         'type'  => 'string',
       ),
-      'accessLevel'            => array(
-        'value' => '[node:field-public-access-level]',
-        'type'  => 'string',
-      ),
-      'rights'                 => array(
-        'value' => '',
-        'type'  => 'string',
-      ),
+//      'accessLevel'            => array(
+//        'value' => '[node:field-public-access-level]',
+//        'type'  => 'string',
+//      ),
+//      'rights'                 => array(
+//        'value' => '',
+//        'type'  => 'string',
+//      ),
       'accrualPeriodicity'     => array(
         'value' => '[node:field-frequency]',
         'type'  => 'string',
       ),
-      'bureauCode'             => array(
-        'value' => '018:10',
-        'type'  => 'array',
-      ),
+//      'bureauCode'             => array(
+//        'value' => '018:10',
+//        'type'  => 'array',
+//      ),
       'contactPoint'           => array(
         '@type'    => array(
           'value' => '',
@@ -49,22 +49,22 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
           'type'  => '',
         ),
       ),
-      'describedBy'            => array(
-        'value' => '[node:field-data-dictionary]',
-        'type'  => 'string',
-      ),
-      'describedByType'        => array(
-        'value' => '',
-        'type'  => 'string',
-      ),
+//      'describedBy'            => array(
+//        'value' => '[node:field-data-dictionary]',
+//        'type'  => 'string',
+//      ),
+//      'describedByType'        => array(
+//        'value' => '',
+//        'type'  => 'string',
+//      ),
       'conformsTo'             => array(
         'value' => '',
         'type'  => 'string',
       ),
-      'dataQuality'            => array(
-        'value' => '',
-        'type'  => 'boolean',
-      ),
+//      'dataQuality'            => array(
+//        'value' => '',
+//        'type'  => 'boolean',
+//      ),
       'description'            => array(
         'value' => '[node:body]',
         'type'  => 'string',
@@ -102,18 +102,18 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
           'value' => '',
           'type'  => '',
         ),
-        'conformsTo'            => array(
-          'value' => '',
-          'type'  => '',
-        ),
-        'describedBy'           => array(
-          'value' => '',
-          'type'  => '',
-        ),
-        'describedByType'       => array(
-          'value' => '',
-          'type'  => '',
-        ),
+//        'conformsTo'            => array(
+//          'value' => '',
+//          'type'  => '',
+//        ),
+//        'describedBy'           => array(
+//          'value' => '',
+//          'type'  => '',
+//        ),
+//        'describedByType'       => array(
+//          'value' => '',
+//          'type'  => '',
+//        ),
       ),
       'identifier'             => array(
         'value' => '[node:uuid]',
@@ -135,22 +135,22 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
         'value' => 'en',
         'type'  => 'array',
       ),
-      'license'                => array(
-        'value' => '[node:field_license]',
-        'type'  => 'string',
-      ),
+//      'license'                => array(
+//        'value' => '[node:field_license]',
+//        'type'  => 'string',
+//      ),
       'modified'               => array(
         'value' => '[node:changed:custom:Y-m-d]',
         'type'  => 'string',
       ),
-      'primaryITInvestmentUII' => array(
-        'value' => '',
-        'type'  => 'string',
-      ),
-      'programCode'            => array(
-        'value' => '018:001',
-        'type'  => 'array',
-      ),
+//      'primaryITInvestmentUII' => array(
+//        'value' => '',
+//        'type'  => 'string',
+//      ),
+//      'programCode'            => array(
+//        'value' => '018:001',
+//        'type'  => 'array',
+//      ),
       'publisher'              => array(
         '@type'             => array(
           'value' => 'org:Organization',
@@ -160,31 +160,31 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
           'value' => '[node:og_group_ref]',
           'type'  => '',
         ),
-        'subOrganizationOf' => array(
-          'value' => '',
-          'type'  => '',
-        ),
+//        'subOrganizationOf' => array(
+//          'value' => '',
+//          'type'  => '',
+//        ),
       ),
-      'references'             => array(
-        'value' => '[node:field_related_content]',
-        'type'  => 'array',
-      ),
+//      'references'             => array(
+//        'value' => '[node:field_related_content]',
+//        'type'  => 'array',
+//      ),
       'spatial'                => array(
         'value' => '[node:field_spatial]',
         'type'  => 'string',
       ),
-      'systemOfRecords'        => array(
-        'value' => '',
-        'type'  => 'string',
-      ),
+//      'systemOfRecords'        => array(
+//        'value' => '',
+//        'type'  => 'string',
+//      ),
       'temporal'               => array(
         'value' => '[node:field_temporal_coverage]',
         'type'  => 'string',
       ),
-      'isPartOf'               => array(
-        'value' => '',
-        'type'  => 'string',
-      ),
+//      'isPartOf'               => array(
+//        'value' => '',
+//        'type'  => 'string',
+//      ),
       'theme'                  => array(
         'value' => '',
         'type'  => 'array',
