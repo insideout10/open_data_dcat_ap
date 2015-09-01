@@ -1,13 +1,14 @@
 <?php
 
+include_once 'open_data_dcat_ap.functions.inc';
 include_once 'open_data_dcat_ap.features.inc';
 
 /**
  * Implements hook_open_data_schema_map_results_alter().
  */
-function open_data_dcat_ap_open_data_schema_map_results_alter(&$result, $api_machine_name, $schema) {
+function open_data_dcat_ap_open_data_schema_map_results_alter(&$result, $machine_name, $api_schema) {
 
-  dd("datigov_core :: [ results count :: " . sizeof($result) . " ][ api_machine_name :: $api_machine_name ][ schema :: $schema ]");
+//  dd("datigov_core :: [ results count :: " . sizeof($result) . " ][ api_machine_name :: $api_machine_name ][ schema :: $schema ]");
 
 //  foreach ($result as $item) {
 //    dd(var_export($item, TRUE));
@@ -15,6 +16,99 @@ function open_data_dcat_ap_open_data_schema_map_results_alter(&$result, $api_mac
 
 
 //  $result['description'] = 'Lorem Ipsum';
+
+  switch ($api_schema) {
+    case 'dcat_ap_1_01':
+
+      $dataset_row = array();
+      foreach ($result as $key => $dataset) {
+        if (isset($dataset['temporal']) && $dataset['temporal'] == "/") {
+          unset($dataset['temporal']);
+        }
+        if (isset($dataset['contactPoint']['hasEmail']) &&
+            !filter_var($dataset['contactPoint']['hasEmail'], FILTER_VALIDATE_EMAIL)
+        ) {
+          $dataset['contactPoint']['hasEmail'] = '';
+        }
+        // License must be a URL.
+        if (isset($dataset['license']) && !filter_var($dataset['license'], FILTER_VALIDATE_URL)) {
+          // This function was introduced within the last year.
+          if (function_exists('dkan_dataset_content_types_license_allowed_values')) {
+            $values = dkan_dataset_content_types_license_subscribed_values();
+            if (isset($values[$dataset['license']]['uri'])) {
+              $dataset['license'] = $values[$dataset['license']]['uri'];
+            }
+          }
+          else {
+            unset($dataset['license']);
+          }
+        }
+
+        // TODO: re-enable this.
+//        if (isset($dataset['distribution'])) {
+//          foreach ($dataset['distribution'] as $num => $dist) {
+//            if ($dist['format'] && !$dist['mediaType']) {
+//              include_once DRUPAL_ROOT . '/includes/file.mimetypes.inc';
+//              $map = file_mimetype_mapping();
+//              $dataset['distribution'][$num]['mediaType'] = isset($map['mimetypes'][$map['extensions'][$dist['format']]]) ? $map['mimetypes'][$map['extensions'][$dist['format']]] : 'text/html';
+//            }
+//            if ($dist['downloadURL'] && !$dist['mediaType']) {
+//              if ($dist['format']) {
+//                $media_type = recline_get_data_type($dist['format']);
+//                $dist['mediaType'] = $media_type ? $media_type : t('unknown');
+//              }
+//              else {
+//                $dist['mediaType'] = t('unknown');
+//              }
+//            }
+//            // Remove empty items.
+//            foreach ($dist as $i => $v) {
+//              if (!$v) {
+//                unset($dataset['distribution'][$num][$i]);
+//              }
+//            }
+//          }
+//        }
+
+        if (isset($dataset['issued']) && strpos($dataset['issued'], ' - ')) {
+          $dataset['issued'] = date("Y-m-d", strtotime(substr($dataset['issued'], 0, strpos($dataset['issued'], ' - '))));
+        }
+
+        if (isset($dataset['contactPoint']) && $dataset['contactPoint']['hasEmail'] == 'mailto:') {
+          $dataset['contactPoint']['hasEmail'] = 'mailto:' . variable_get('site_mail', ini_get('sendmail_from'));
+        }
+
+        if (isset($dataset['publisher']) && !isset($dataset['publisher']['name'])) {
+          global $base_url;
+          $name = parse_url($base_url, PHP_URL_HOST);
+          if (!is_null($name)) {
+            $dataset['publisher']['name'] = $name;
+          }
+          else {
+            $dataset['publisher']['name'] = variable_get('site_name', FALSE);
+          }
+        }
+        array_push($dataset_row, $dataset);
+        unset($result[$key]);
+      }
+
+      $result['@context']    = 'https://raw.githubusercontent.com/insideout10/open_data_dcat_ap/develop/data/v1.01/catalog.jsonld';
+      $result['@id']         = url('dcat.json', array('absolute' => TRUE));
+      $result['@type']       = 'dcat:Catalog';
+      $result['conformsTo']  = 'https://github.com/insideout10/open_data_dcat_ap';
+      $result['describedBy'] = 'https://raw.githubusercontent.com/insideout10/open_data_dcat_ap/develop/data/v1.01/catalog.json';
+      $result['dataset']     = $dataset_row;
+
+//      $dataset_row = array();
+//      foreach ($result as $key => $dataset) {
+//        dkan_dataset_content_types_alter_dataset_license($dataset, 'license');
+//        $dataset_row[] = $dataset;
+//        unset($result[$key]);
+//      }
+//      $result = $dataset_row;
+
+      break;
+  }
 
 }
 
