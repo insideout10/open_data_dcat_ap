@@ -1,0 +1,193 @@
+{
+  "@context": {
+    "adms": "http://www.w3.org/ns/adms#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "org": "http://www.w3.org/ns/org#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "@vocab": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "pod": "https://project-open-data.cio.gov/v1.1/schema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "v": "http://www.w3.org/2006/vcard/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "accessURL": {
+      "@id": "dcat:accessURL",
+      "@type": "@id"
+    },
+    "byteSize": {
+      "@id": "dcat:byteSize",
+      "@type": "xsd:decimal"
+    },
+    "changeType": {
+      "@id": "adms:status",
+      "@type": "skos:Concept"
+    },
+    "conformsTo": {
+      "@id": "dct:conformsTo",
+      "@type": "dct:Standard"
+    },
+    "contactPoint": {
+      "@id": "adms:contactPoint",
+      "@type": "v:VCard"
+    },
+    "dataset": {
+      "@id": "dcat:dataset",
+      "@type": "dcat:Dataset"
+    },
+    "distribution": {
+      "@id": "dcat:distribution",
+      "@type": "dcat:Distribution"
+    },
+    "description": {
+      "@id": "dc:description",
+      "@type": "rdfs:Literal",
+      "@language": "it"
+    },
+    "downloadURL": {
+      "@id": "dcat:downloadURL",
+      "@type": "@id"
+    },
+    "endDate": {
+      "@id": "schema:endDate",
+      "@type": [
+        "xsd:date",
+        "xsd:dateTime"
+      ]
+    },
+    "format": {
+      "@id": "dct:format",
+      "@type": "dct:MediaTypeOrExtent"
+    },
+    "frequency": {
+      "@id": "dct:accrualPeriodicity",
+      "@type": "dct:Frequency"
+    },
+    "homepage": {
+      "@id": "foaf:homepage",
+      "@type": "@id"
+    },
+    "identifier": {
+      "@id": "dct:identifier",
+      "@type": "rdfs:Literal"
+    },
+    "keyword": {
+      "@id": "dcat:keyword",
+      "@type": "rdfs:Literal"
+    },
+    "landingPage": {
+      "@id": "dcat:landingPage",
+      "@type": "@id"
+    },
+    "language": {
+      "@id": "dct:language",
+      "@type": "dct:LinguisticSystem"
+    },
+    "license": {
+      "@id": "dct:license",
+      "@type": "dct:LicenseDocument"
+    },
+    "licenseType": {
+      "@id": "dct:type",
+      "@type": "@id"
+    },
+    "issued": {
+      "@id": "dct:issued",
+      "@type": [
+        "xsd:date",
+        "xsd:dateTime"
+      ]
+    },
+    "mediaType": {
+      "@id": "dcat:mediaType",
+      "@type": "dct:MediaTypeOrExtent"
+    },
+    "name": {
+      "@id": "foaf:name",
+      "@type": "rdfs:Literal"
+    },
+    "otherIdentifier": {
+      "@id": "adms:identifier",
+      "@type": "adms:Identifier"
+    },
+    "prefLabel": {
+      "@id": "skos:prefLabel",
+      "@type": "rdfs:Literal"
+    },
+    "primaryTopic": {
+      "@id": "foaf:primaryTopic",
+      "@type": "dcat:Dataset"
+    },
+    "publisher": {
+      "@id": "dct:publisher",
+      "@type": "foaf:Agent"
+    },
+    "publisherType": {
+      "@id": "dct:type",
+      "@type": "skos:Concept"
+    },
+    "record": {
+      "@id": "dcat:record",
+      "@type": "dcat:CatalogRecord"
+    },
+    "releaseDate": {
+      "@id": "dct:issued",
+      "@type": [
+        "xsd:date",
+        "xsd:dateTime"
+      ]
+    },
+    "rights": {
+      "@id": "dct:rights",
+      "@type": "dct:RightsStatement"
+    },
+    "spatial": {
+      "@id": "dct:spatial",
+      "@type": "dct:Location"
+    },
+    "startDate": {
+      "@id": "schema:startDate",
+      "@type": [
+        "xsd:date",
+        "xsd:dateTime"
+      ]
+    },
+    "status": {
+      "@id": "adms:status",
+      "@type": "skos:Concept"
+    },
+    "temporal": {
+      "@id": "dct:temporal",
+      "@type": "dct:PeriodOfTime"
+    },
+    "theme": {
+      "@id": "dcat:theme",
+      "@type": "skos:Concept"
+    },
+    "themes": {
+      "@id": "dcat:themeTaxonomy",
+      "@type": "skos:ConceptScheme"
+    },
+    "title": {
+      "@id": "dct:title",
+      "@type": "rdfs:Literal",
+      "@language": "it"
+    },
+    "modified": {
+      "@id": "dct:modified",
+      "@type": [
+        "xsd:date",
+        "xsd:dateTime"
+      ]
+    },
+    "version": {
+      "@id": "adms:version",
+      "@type": "rdfs:Literal"
+    },
+    "versionNotes": {
+      "@id": "adms:versionNotes",
+      "@type": "rdfs:Literal"
+    }
+  }
+}
