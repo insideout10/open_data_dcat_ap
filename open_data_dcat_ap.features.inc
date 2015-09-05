@@ -15,7 +15,7 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
     'type'         => 'node',
     'bundle'       => 'dataset',
     'mapping'      => array(
-      '@type'                  => array(
+      '@type'              => array(
         'value' => 'dcat:Dataset',
         'type'  => 'string',
       ),
@@ -27,7 +27,7 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
 //        'value' => '',
 //        'type'  => 'string',
 //      ),
-      'accrualPeriodicity'     => array(
+      'accrualPeriodicity' => array(
         'value' => '[node:field-frequency]',
         'type'  => 'string',
       ),
@@ -35,7 +35,7 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
 //        'value' => '018:10',
 //        'type'  => 'array',
 //      ),
-      'contactPoint'           => array(
+      'contactPoint'       => array(
         '@type'    => array(
           'value' => '',
           'type'  => '',
@@ -57,7 +57,7 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
 //        'value' => '',
 //        'type'  => 'string',
 //      ),
-      'conformsTo'             => array(
+      'conformsTo'         => array(
         'value' => '',
         'type'  => 'string',
       ),
@@ -65,11 +65,11 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
 //        'value' => '',
 //        'type'  => 'boolean',
 //      ),
-      'description'            => array(
+      'description'        => array(
         'value' => '[node:body]',
-        'type'  => 'string',
+        'type'  => 'string'
       ),
-      'distribution'           => array(
+      'distribution'       => array(
         'odsm_entity_reference' => array(
           'value' => 'field_resources',
           'type'  => '',
@@ -115,23 +115,23 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
 //          'type'  => '',
 //        ),
       ),
-      'identifier'             => array(
+      'identifier'         => array(
         'value' => '[node:uuid]',
         'type'  => 'string',
       ),
-      'issued'                 => array(
+      'issued'             => array(
         'value' => '',
         'type'  => 'string',
       ),
-      'keyword'                => array(
+      'keyword'            => array(
         'value' => '[node:field-tags]',
         'type'  => 'array',
       ),
-      'landingPage'            => array(
+      'landingPage'        => array(
         'value' => '',
         'type'  => 'string',
       ),
-      'language'               => array(
+      'language'           => array(
         'value' => 'en',
         'type'  => 'array',
       ),
@@ -139,7 +139,7 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
 //        'value' => '[node:field_license]',
 //        'type'  => 'string',
 //      ),
-      'modified'               => array(
+      'modified'           => array(
         'value' => '[node:changed:custom:Y-m-d]',
         'type'  => 'string',
       ),
@@ -151,12 +151,12 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
 //        'value' => '018:001',
 //        'type'  => 'array',
 //      ),
-      'publisher'              => array(
-        '@type'             => array(
+      'publisher'          => array(
+        '@type' => array(
           'value' => 'org:Organization',
           'type'  => '',
         ),
-        'name'              => array(
+        'name'  => array(
           'value' => '[node:og_group_ref]',
           'type'  => '',
         ),
@@ -169,7 +169,7 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
 //        'value' => '[node:field_related_content]',
 //        'type'  => 'array',
 //      ),
-      'spatial'                => array(
+      'spatial'            => array(
         'value' => '[node:field_spatial]',
         'type'  => 'string',
       ),
@@ -177,7 +177,7 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
 //        'value' => '',
 //        'type'  => 'string',
 //      ),
-      'temporal'               => array(
+      'temporal'           => array(
         'value' => '[node:field_temporal_coverage]',
         'type'  => 'string',
       ),
@@ -185,11 +185,11 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
 //        'value' => '',
 //        'type'  => 'string',
 //      ),
-      'theme'                  => array(
+      'theme'              => array(
         'value' => '',
         'type'  => 'array',
       ),
-      'title'                  => array(
+      'title'              => array(
         'value' => '[node:title]',
         'type'  => 'string',
       ),
