@@ -61,7 +61,7 @@ function open_data_dcat_ap_open_data_schema_map_results_alter(&$result, $machine
         unset($result[$key]);
       }
 
-      $result['@context'] = 'https://raw.githubusercontent.com/insideout10/open_data_dcat_ap/develop/data/v1.01/catalog.it.jsonld';
+      $result['@context'] = 'https://raw.githubusercontent.com/insideout10/open_data_dcat_ap/develop/data/v1.01/context.it.jsonld';
       $result['@id']      = url('dcat.json', array('absolute' => TRUE));
       $result['@type']    = 'dcat:Catalog';
 
