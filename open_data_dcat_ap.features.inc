@@ -27,7 +27,7 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
 //        'value' => '',
 //        'type'  => 'string',
 //      ),
-      'accrualPeriodicity' => array(
+      'frequency' => array(
         'value' => '[node:field-frequency]',
         'type'  => 'string',
       ),
@@ -78,6 +78,10 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
           'value' => 'dcat:Distribution',
           'type'  => '',
         ),
+        'accessURL'             => array(
+          'value' => '[node:field-resources:Nth:url]',
+          'type'  => ''
+        ),
         'downloadURL'           => array(
           'value' => '[node:field-resources:Nth:field-link-api:url] || [node:field-resources:Nth:field_link_remote_file] || [node:field-resources:Nth:field-upload:url]',
           'type'  => '',
@@ -88,19 +92,15 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
         ),
         'format'                => array(
           'value' => '[node:field-resources:Nth:field-format:name]',
-          'type'  => '',
-        ),
-        'accessURL'             => array(
-          'value' => '',
-          'type'  => '',
+          'type'  => 'string',
         ),
         'description'           => array(
-          'value' => '',
-          'type'  => '',
+          'value' => '[node:field-resources:Nth:body]',
+          'type'  => 'string',
         ),
         'title'                 => array(
-          'value' => '',
-          'type'  => '',
+          'value' => '[node:field-resources:Nth:title]',
+          'type'  => 'string',
         ),
 //        'conformsTo'            => array(
 //          'value' => '',
@@ -153,12 +153,12 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
 //      ),
       'publisher'          => array(
         '@type' => array(
-          'value' => 'org:Organization',
+          'value' => 'foaf:Agent',
           'type'  => '',
         ),
         'name'  => array(
-          'value' => '[node:og_group_ref]',
-          'type'  => '',
+          'value' => '[node:field-organization-ref:title]',
+          'type'  => 'string',
         ),
 //        'subOrganizationOf' => array(
 //          'value' => '',
