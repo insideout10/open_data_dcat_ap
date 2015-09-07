@@ -77,6 +77,11 @@ function open_data_dcat_ap_open_data_schema_map_results_alter(&$result, $machine
 
       $result['spatial'] = 'http://publications.europa.eu/resource/authority/country/ITA';
 
+      $result['license'] = array(
+        '@type'       => 'dct:LicenseDocument',
+        'licenseType' => 'http://purl.org/adms/licencetype/PublicDomain'
+      );
+
       $result['publisher'] = array(
         '@type'         => 'foaf:Agent',
         '@id'           => 'http://spcdata.digitpa.gov.it/Amministrazione/agid',
