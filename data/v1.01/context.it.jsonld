@@ -51,10 +51,7 @@
     },
     "endDate": {
       "@id": "schema:endDate",
-      "@type": [
-        "xsd:date",
-        "xsd:dateTime"
-      ]
+      "@type": "xsd:dateTime"
     },
     "format": {
       "@id": "dct:format",
@@ -94,10 +91,7 @@
     },
     "issued": {
       "@id": "dct:issued",
-      "@type": [
-        "xsd:date",
-        "xsd:dateTime"
-      ]
+      "@type": "xsd:dateTime"
     },
     "mediaType": {
       "@id": "dcat:mediaType",
@@ -133,10 +127,7 @@
     },
     "releaseDate": {
       "@id": "dct:issued",
-      "@type": [
-        "xsd:date",
-        "xsd:dateTime"
-      ]
+      "@type": "xsd:dateTime"
     },
     "rights": {
       "@id": "dct:rights",
@@ -148,10 +139,7 @@
     },
     "startDate": {
       "@id": "schema:startDate",
-      "@type": [
-        "xsd:date",
-        "xsd:dateTime"
-      ]
+      "@type": "xsd:dateTime"
     },
     "status": {
       "@id": "adms:status",
@@ -176,10 +164,7 @@
     },
     "modified": {
       "@id": "dct:modified",
-      "@type": [
-        "xsd:date",
-        "xsd:dateTime"
-      ]
+      "@type": "xsd:dateTime"
     },
     "version": {
       "@id": "adms:version",
