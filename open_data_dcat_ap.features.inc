@@ -15,61 +15,37 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
     'type'         => 'node',
     'bundle'       => 'dataset',
     'mapping'      => array(
-      '@type'              => array(
+      '@type'        => array(
         'value' => 'dcat:Dataset',
         'type'  => 'string',
       ),
-//      'accessLevel'            => array(
-//        'value' => '[node:field-public-access-level]',
-//        'type'  => 'string',
-//      ),
-//      'rights'                 => array(
-//        'value' => '',
-//        'type'  => 'string',
-//      ),
-      'frequency' => array(
+      'frequency'    => array(
         'value' => '[node:field-frequency]',
         'type'  => 'string',
       ),
-//      'bureauCode'             => array(
-//        'value' => '018:10',
-//        'type'  => 'array',
-//      ),
-      'contactPoint'       => array(
+      'contactPoint' => array(
         '@type'    => array(
-          'value' => '',
+          'value' => 'v:VCard',
           'type'  => '',
         ),
         'fn'       => array(
-          'value' => '[node:field_contact_name] || [node:author:name]',
+          'value' => '[node:field_contact_name]',
           'type'  => '',
         ),
         'hasEmail' => array(
-          'value' => 'mailto:[node:field-contact-email]',
+          'value' => '[node:field-contact-email]',
           'type'  => '',
         ),
       ),
-//      'describedBy'            => array(
-//        'value' => '[node:field-data-dictionary]',
-//        'type'  => 'string',
-//      ),
-//      'describedByType'        => array(
-//        'value' => '',
-//        'type'  => 'string',
-//      ),
-      'conformsTo'         => array(
+      'conformsTo'   => array(
         'value' => '',
         'type'  => 'string',
       ),
-//      'dataQuality'            => array(
-//        'value' => '',
-//        'type'  => 'boolean',
-//      ),
-      'description'        => array(
+      'description'  => array(
         'value' => '[node:body]',
         'type'  => 'string'
       ),
-      'distribution'       => array(
+      'distribution' => array(
         'odsm_entity_reference' => array(
           'value' => 'field_resources',
           'type'  => '',
@@ -102,56 +78,32 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
           'value' => '[node:field-resources:Nth:title]',
           'type'  => 'string',
         ),
-//        'conformsTo'            => array(
-//          'value' => '',
-//          'type'  => '',
-//        ),
-//        'describedBy'           => array(
-//          'value' => '',
-//          'type'  => '',
-//        ),
-//        'describedByType'       => array(
-//          'value' => '',
-//          'type'  => '',
-//        ),
       ),
-      'identifier'         => array(
+      'identifier'   => array(
         'value' => '[node:uuid]',
         'type'  => 'string',
       ),
-      'issued'             => array(
+      'issued'       => array(
         'value' => '',
         'type'  => 'string',
       ),
-      'keyword'            => array(
+      'keyword'      => array(
         'value' => '[node:field-tags]',
         'type'  => 'array',
       ),
-      'landingPage'        => array(
-        'value' => '',
-        'type'  => 'string',
+      'landingPage'  => array(
+        'value' => '[node:url]',
+        'type'  => '',
       ),
-      'language'           => array(
-        'value' => 'en',
-        'type'  => 'array',
+      'language'     => array(
+        'value' => 'http://publications.europa.eu/resource/authority/language/ITA',
+        'type'  => '',
       ),
-//      'license'                => array(
-//        'value' => '[node:field_license]',
-//        'type'  => 'string',
-//      ),
-      'modified'           => array(
+      'modified'     => array(
         'value' => '[node:changed:custom:Y-m-d]',
         'type'  => 'string',
       ),
-//      'primaryITInvestmentUII' => array(
-//        'value' => '',
-//        'type'  => 'string',
-//      ),
-//      'programCode'            => array(
-//        'value' => '018:001',
-//        'type'  => 'array',
-//      ),
-      'publisher'          => array(
+      'publisher'    => array(
         '@type' => array(
           'value' => 'foaf:Agent',
           'type'  => '',
@@ -159,43 +111,27 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
         'name'  => array(
           'value' => '[node:field-organization-ref:title]',
           'type'  => 'string',
-        ),
-//        'subOrganizationOf' => array(
-//          'value' => '',
-//          'type'  => '',
-//        ),
+        )
       ),
-//      'references'             => array(
-//        'value' => '[node:field_related_content]',
-//        'type'  => 'array',
-//      ),
-      'spatial'            => array(
+      'spatial'      => array(
         'value' => '[node:field_spatial]',
         'type'  => 'string',
       ),
-//      'systemOfRecords'        => array(
-//        'value' => '',
-//        'type'  => 'string',
-//      ),
-      'temporal'           => array(
+      'temporal'     => array(
         'value' => '[node:field_temporal_coverage]',
         'type'  => 'string',
       ),
-//      'isPartOf'               => array(
-//        'value' => '',
-//        'type'  => 'string',
-//      ),
-      'theme'              => array(
+      'theme'        => array(
         'value' => '',
         'type'  => 'array',
       ),
-      'title'              => array(
+      'title'        => array(
         'value' => '[node:title]',
         'type'  => 'string',
-      ),
+      )
     ),
     'endpoint'     => 'dcat.json',
-    'arguments'    => array(),
+    'arguments'    => array()
   );
 
   return $open_data_schema_apis;

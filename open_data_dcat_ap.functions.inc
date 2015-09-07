@@ -21,9 +21,6 @@ function open_data_dcat_ap_dataset_alter(&$dataset) {
   // Remove trailing spaces in the description.
   $dataset['description'] = strip_tags($dataset['description']);
 
-  // Language is always IT
-  $dataset['language'] = 'http://publications.europa.eu/resource/authority/language/ITA';
-
   // Set the mediaType for the distribution.
   if (isset($dataset['distribution'])) {
     foreach ($dataset['distribution'] as $num => $dist) {

@@ -73,10 +73,13 @@ function open_data_dcat_ap_open_data_schema_map_results_alter(&$result, $machine
       $result['releaseDate'] = '2015-06-08';
       $result['modified']    = date("Y-m-d", time());
 
+      $result['themes'] = 'http://eurovoc.europa.eu';
+
       $result['spatial'] = 'http://publications.europa.eu/resource/authority/country/ITA';
 
       $result['publisher'] = array(
         '@type'         => 'foaf:Agent',
+        '@id'           => 'http://spcdata.digitpa.gov.it/Amministrazione/agid',
         'name'          => "Agenzia per l'Italia Digitale",
         // Publisher Type, see:
         //  * https://joinup.ec.europa.eu/asset/dcat_application_profile/issue/agent-publisher-type
