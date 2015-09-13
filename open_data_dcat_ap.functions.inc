@@ -7,6 +7,20 @@
  * @param $dataset
  */
 function open_data_dcat_ap_dataset_alter(&$dataset) {
+  
+  $publisher_types = array(
+    'http://purl.org/adms/publishertype/Academia-ScientificOrganisation',
+    'http://purl.org/adms/publishertype/Company',
+    'http://purl.org/adms/publishertype/IndustryConsortium',
+    'http://purl.org/adms/publishertype/LocalAuthority',
+    'http://purl.org/adms/publishertype/NationalAuthority',
+    'http://purl.org/adms/publishertype/NonGovernmentalOrganisation',
+    'http://purl.org/adms/publishertype/NonProfitOrganisation',
+    'http://purl.org/adms/publishertype/PrivateIndividual(s)',
+    'http://purl.org/adms/publishertype/RegionalAuthority',
+    'http://purl.org/adms/publishertype/StandardisationBody',
+    'http://purl.org/adms/publishertype/SupraNationalAuthority'
+  );
 
   // *description* is mandatory.
   if (!isset($dataset['description'])) {
@@ -18,9 +32,23 @@ function open_data_dcat_ap_dataset_alter(&$dataset) {
     unset($dataset['contactPoint']);
   }
 
-  // *name* is mandatory.
-  if (isset($dataset['publisher']) && empty($dataset['publisher']['name'])) {
-    $dataset['publisher']['name'] = '(senza nome)';
+  // Check the publisher properties.
+  if (isset($dataset['publisher'])) {
+
+    // *name* is mandatory, set _(unknown)_ if emtpy.
+    if (empty($dataset['publisher']['name'])) {
+      $dataset['publisher']['name'] = '(senza nome)';
+    }
+
+    // *publisherType* is recommended and uses the ADMS publisher type vocabulary.
+    if (isset($dataset['publisher']['publisherType']) && is_numeric($dataset['publisher']['publisherType'])) {
+
+      $publisher_type_index = (int) $dataset['publisher']['publisherType'];
+      if (0 < $publisher_type_index && sizeof($publisher_types) >= $publisher_type_index) {
+        $dataset['publisher']['publisherType'] = $publisher_types[$publisher_type_index - 1];
+      }
+    }
+
   }
 
   // Remove trailing spaces in the description.

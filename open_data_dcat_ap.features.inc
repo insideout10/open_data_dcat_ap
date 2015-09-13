@@ -111,6 +111,10 @@ function open_data_dcat_ap_open_data_schema_apis_defaults() {
         'name'  => array(
           'value' => '[node:field-organization-ref:title]',
           'type'  => 'string',
+        ),
+        'publisherType'  => array(
+          'value' => '[node:field-organization-ref:field_publisher_type]',
+          'type'  => 'string',
         )
       ),
       'spatial'      => array(
