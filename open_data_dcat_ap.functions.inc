@@ -20,7 +20,7 @@ function open_data_dcat_ap_dataset_alter(&$dataset) {
 
   // *name* is mandatory.
   if (isset($dataset['publisher']) && empty($dataset['publisher']['name'])) {
-    $dataset['publisher']['name'] = 'senza nome';
+    $dataset['publisher']['name'] = '(senza nome)';
   }
 
   // Remove trailing spaces in the description.
