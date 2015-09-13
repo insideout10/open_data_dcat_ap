@@ -18,6 +18,11 @@ function open_data_dcat_ap_dataset_alter(&$dataset) {
     unset($dataset['contactPoint']);
   }
 
+  // *name* is mandatory.
+  if (isset($dataset['publisher']) && empty($dataset['publisher']['name'])) {
+    $dataset['publisher']['name'] = 'senza nome';
+  }
+
   // Remove trailing spaces in the description.
   $dataset['description'] = strip_tags($dataset['description']);
 
