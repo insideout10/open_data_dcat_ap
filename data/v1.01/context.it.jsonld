@@ -30,7 +30,7 @@
     },
     "contactPoint": {
       "@id": "adms:contactPoint",
-      "@type": "v:VCard"
+      "@type": "@id"
     },
     "dataset": {
       "@id": "dcat:dataset",
