@@ -41,7 +41,7 @@
       "@type": "dcat:Distribution"
     },
     "description": {
-      "@id": "dc:description",
+      "@id": "dct:description",
       "@type": "rdfs:Literal",
       "@language": "it"
     },
