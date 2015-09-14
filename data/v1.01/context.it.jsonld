@@ -95,7 +95,7 @@
     },
     "mediaType": {
       "@id": "dcat:mediaType",
-      "@type": "dct:MediaTypeOrExtent"
+      "@type": "@id"
     },
     "name": {
       "@id": "foaf:name",
