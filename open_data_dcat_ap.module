@@ -47,6 +47,16 @@ function open_data_dcat_ap_open_data_schema_map_results_alter(&$result, $machine
           $dataset['contactPoint']['hasEmail'] = 'mailto:' . variable_get('site_mail', ini_get('sendmail_from'));
         }
 
+//        if (isset($dataset['contactPoint']) && isset($dataset['contactPoint']['hasEmail'])) {
+//          $email = 'mailto:' . $dataset['contactPoint']['hasEmail'];
+//          if (!isset($result[$email])) {
+//            $result[$email] = $dataset['contactPoint'];
+//          }
+//
+//          unset($dataset['contactPoint']);
+//          $dataset['contactPoint'] = $email;
+//        }
+
 //        if (isset($dataset['publisher']) && !isset($dataset['publisher']['name'])) {
 //          global $base_url;
 //          $name = parse_url($base_url, PHP_URL_HOST);
@@ -57,7 +67,13 @@ function open_data_dcat_ap_open_data_schema_map_results_alter(&$result, $machine
 //            $dataset['publisher']['name'] = variable_get('site_name', FALSE);
 //          }
 //        }
-        array_push($dataset_row, $dataset);
+
+
+        // Only add datasets with at least a valid distribution.
+        if (0 < sizeof($dataset['distribution'])) {
+          array_push($dataset_row, $dataset);
+        }
+
         unset($result[$key]);
       }
 
