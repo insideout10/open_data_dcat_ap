@@ -7,7 +7,7 @@
  * @param $dataset
  */
 function open_data_dcat_ap_dataset_alter(&$dataset) {
-  
+
   $publisher_types = array(
     'http://purl.org/adms/publishertype/Academia-ScientificOrganisation',
     'http://purl.org/adms/publishertype/Company',
@@ -53,6 +53,11 @@ function open_data_dcat_ap_dataset_alter(&$dataset) {
 
   // Remove trailing spaces in the description.
   $dataset['description'] = strip_tags($dataset['description']);
+
+  // *description* is required, therefore we provide a placeholder if empty.
+  if (empty($dataset['description'])) {
+    $dataset['description'] = '(senza descrizione)';
+  }
 
   // Set the mediaType for the distribution.
   if (isset($dataset['distribution'])) {
