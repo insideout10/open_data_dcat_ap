@@ -90,4 +90,10 @@ function open_data_dcat_ap_dataset_alter(&$dataset) {
       }
     }
   }
+
+  // Our *spatial* is not compatible with DCAT-AP 1.01
+  if ($dataset['spatial']) {
+    unset($dataset['spatial']);
+  }
+
 }

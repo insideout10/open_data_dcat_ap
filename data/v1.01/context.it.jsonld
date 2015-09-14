@@ -79,7 +79,7 @@
     },
     "language": {
       "@id": "dct:language",
-      "@type": "dct:LinguisticSystem"
+      "@type": "@id"
     },
     "license": {
       "@id": "dct:license",
