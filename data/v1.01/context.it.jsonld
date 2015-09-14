@@ -83,7 +83,7 @@
     },
     "license": {
       "@id": "dct:license",
-      "@type": "@id"
+      "@type": "dct:LicenseDocument"
     },
     "licenseType": {
       "@id": "dct:type",
