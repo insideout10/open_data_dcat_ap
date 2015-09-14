@@ -83,7 +83,7 @@
     },
     "license": {
       "@id": "dct:license",
-      "@type": "dct:LicenseDocument"
+      "@type": "@id"
     },
     "licenseType": {
       "@id": "dct:type",
@@ -135,7 +135,7 @@
     },
     "spatial": {
       "@id": "dct:spatial",
-      "@type": "dct:Location"
+      "@type": "@id"
     },
     "startDate": {
       "@id": "schema:startDate",
@@ -155,7 +155,7 @@
     },
     "themes": {
       "@id": "dcat:themeTaxonomy",
-      "@type": "skos:ConceptScheme"
+      "@type": "@id"
     },
     "title": {
       "@id": "dct:title",
