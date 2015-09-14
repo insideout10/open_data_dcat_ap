@@ -119,7 +119,7 @@
     },
     "publisherType": {
       "@id": "dct:type",
-      "@type": "skos:Concept"
+      "@type": "@id"
     },
     "record": {
       "@id": "dcat:record",
